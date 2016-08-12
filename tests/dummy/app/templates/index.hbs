@@ -10,6 +10,19 @@
   <button {{action (action (mut showRight) 'red-sidebar') }}>Right Red</button>
 </div>
 
+<div>
+  <button {{action (action (mut showTop) false)}}>Top Clear</button>
+  <button {{action (action (mut showTop) 'purple-sidebar') }}>Top Purple</button>
+  <button {{action (action (mut showTop) 'orange-sidebar') }}>Top Orange</button>
+</div>
+
+<div>
+  <button {{action (action (mut showBottom) false)}}>Bottom Clear</button>
+  <button {{action (action (mut showBottom) 'purple-sidebar') }}>Bottom Purple</button>
+  <button {{action (action (mut showBottom) 'orange-sidebar') }}>Bottom Orange</button>
+</div>
+
+
 {{lorem-ipsum}}
 
 {{#if showLeft}}
@@ -18,4 +31,12 @@
 
 {{#if showRight}}
   {{to-elsewhere named="cst-right" send=(component showRight) }}
+{{/if}}
+
+{{#if showTop}}
+  {{to-elsewhere named="cst-top" send=(component showTop) }}
+{{/if}}
+
+{{#if showBottom}}
+  {{to-elsewhere named="cst-bottom" send=(component showBottom) }}
 {{/if}}

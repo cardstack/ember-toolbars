@@ -23,6 +23,7 @@ export default Ember.Component.extend({
       );
     };
   }),
+
   rightRules: Ember.computed('animationDuration', function(){
     let duration = this.get('animationDuration');
     return function rightRules() {
@@ -37,5 +38,40 @@ export default Ember.Component.extend({
         this.use(swapOut, 'x', -1, { duration: duration / 2 })
       );
     };
-  })
+  }),
+
+  topRules: Ember.computed('animationDuration', function(){
+    let duration = this.get('animationDuration');
+    return function topRules() {
+      this.transition(
+        this.fromValue(false),
+        this.toValue(true),
+        this.use('to-down', { duration }),
+        this.reverse('to-up', { duration })
+      );
+      this.transition(
+        this.fromValue(true),
+        this.toValue(true),
+        this.use(swapOut, 'y', 1, { duration: duration / 2 })
+      );
+    };
+  }),
+
+  bottomRules: Ember.computed('animationDuration', function(){
+    let duration = this.get('animationDuration');
+    return function rightRules() {
+      this.transition(
+        this.fromValue(true),
+        this.toValue(false),
+        this.use('wait', duration)
+      );
+      this.transition(
+        this.fromValue(true),
+        this.toValue(true),
+        this.use(swapOut, 'y', -1, { duration: duration / 2 })
+      );
+    };
+  }),
+
+
 });

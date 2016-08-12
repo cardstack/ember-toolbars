@@ -1,3 +1,11 @@
+<div class="cst-page-header">
+  {{#from-elsewhere name="cst-top" as |top|}}
+    {{#liquid-bind top rules=topRules growDuration=animationDuration growPixelsPerSecond=1 as |currentTop|}}
+      {{component currentTop}}
+    {{/liquid-bind}}
+  {{/from-elsewhere}}
+</div>
+
 <div class="cst-page-wrapper">
 
   <div class="cst-page-gap">
@@ -19,4 +27,12 @@
     {{/liquid-bind}}
   {{/from-elsewhere}}
   </div>
+</div>
+
+<div class="cst-page-footer">
+  {{#from-elsewhere name="cst-bottom" as |top|}}
+    {{#liquid-bind top rules=bottomRules growDuration=animationDuration growPixelsPerSecond=1 as |currentBottom|}}
+      {{component currentBottom}}
+    {{/liquid-bind}}
+  {{/from-elsewhere}}
 </div>

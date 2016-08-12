@@ -21,6 +21,18 @@ body {
     width: 15vw;
 }
 
+.purple-sidebar {
+    background-color: purple;
+    width: 100%;
+    padding: 0.5em;
+}
+
+.orange-sidebar {
+    background-color: orange;
+    width: 100%;
+    padding: 0.5em;
+}
+
 .squishable-container {
     position: relative;
     transform-origin: 0 0;
