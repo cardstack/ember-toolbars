@@ -1,0 +1,19 @@
+{{#liquid-animator as |a|}}
+
+  {{#liquid-bind leftSidebar animator=a as |currentLeftSidebar|}}
+    <div class="cardstack-toolbars-left">
+      {{component currentLeftSidebar}}
+    </div>
+  {{/liquid-bind}}
+
+  <div class="cardstack-toolbars-main">
+    {{yield}}
+  </div>
+
+  {{#liquid-bind rightSidebar animator=a as |currentRightSidebar|}}
+    <div class="cardstack-toolbars-right">
+      {{component currentRightSidebar}}
+    </div>
+  {{/liquid-bind}}
+
+{{/liquid-animator}}

@@ -1,0 +1,12 @@
+<button {{action (action (mut showLeft) (not showLeft))}}>Toggle Left</button>
+<button {{action (action (mut showRight) (not showRight))}}>Toggle Right</button>
+
+{{lorem-ipsum}}
+
+{{#if showLeft}}
+  {{to-elsewhere named="left-sidebar" send=(component "blue-sidebar") }}
+{{/if}}
+
+{{#if showRight}}
+  {{to-elsewhere named="right-sidebar" send=(component "green-sidebar") }}
+{{/if}}

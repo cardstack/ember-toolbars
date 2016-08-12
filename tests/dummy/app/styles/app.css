@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.page-wrapper {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.page-wrapper > div {
+    height: 100%;
+}
+
+.page-main {
+    flex: 1;
+}
+
+.page-gap {
+    height: 100%;
+}
+
+.page-gap > .liquid-container {
+    height: 100%;
+}
+
+.page-gap > .liquid-container > .liquid-child {
+    height: 100%;
+}
+
+.blue-sidebar {
+    background-color: blue;
+    height: 100%;
+    width: 10vw;
+}
+
+.green-sidebar {
+    background-color: green;
+    height: 100%;
+    width: 20vw;
+}
