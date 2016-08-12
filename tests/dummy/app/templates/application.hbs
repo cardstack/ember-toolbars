@@ -8,9 +8,9 @@
   {{/from-elsewhere}}
   </div>
 
-  <div class="page-main">
+  {{#squishable-container class="page-main" }}
     {{outlet}}
-  </div>
+  {{/squishable-container}}
 
   <div class="page-gap">
   {{#from-elsewhere name="right-sidebar" as |right|}}

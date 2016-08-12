@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-const duration = 300;
+const duration = 500;
 
 export default Ember.Controller.extend({
   leftRules,
