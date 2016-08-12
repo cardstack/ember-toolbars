@@ -1,24 +1,5 @@
-<div class="page-wrapper">
-
-  <div class="page-gap">
-  {{#from-elsewhere name="left-sidebar" as |left|}}
-    {{#liquid-bind left rules=leftRules growDuration=duration growPixelsPerSecond=1 as |currentLeft|}}
-      {{component currentLeft}}
-    {{/liquid-bind}}
-  {{/from-elsewhere}}
-  </div>
-
-  <div class="page-main">
-    {{#squishable-container}}
-      {{outlet}}
-    {{/squishable-container}}
-  </div>
-
-  <div class="page-gap">
-  {{#from-elsewhere name="right-sidebar" as |right|}}
-    {{#liquid-bind right rules=rightRules growDuration=duration growPixelsPerSecond=1 as |currentRight|}}
-      {{component currentRight}}
-    {{/liquid-bind}}
-  {{/from-elsewhere}}
-  </div>
-</div>
+{{#cardstack-toolbars}}
+  {{#squishable-container}}
+    {{outlet}}
+  {{/squishable-container}}
+{{/cardstack-toolbars}}

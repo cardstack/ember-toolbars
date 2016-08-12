@@ -1,19 +1,22 @@
-{{#liquid-animator as |a|}}
+<div class="cst-page-wrapper">
 
-  {{#liquid-bind leftSidebar animator=a as |currentLeftSidebar|}}
-    <div class="cardstack-toolbars-left">
-      {{component currentLeftSidebar}}
-    </div>
-  {{/liquid-bind}}
+  <div class="cst-page-gap">
+  {{#from-elsewhere name="cst-left" as |left|}}
+    {{#liquid-bind left rules=leftRules growDuration=animationDuration growPixelsPerSecond=1 as |currentLeft|}}
+      {{component currentLeft}}
+    {{/liquid-bind}}
+  {{/from-elsewhere}}
+  </div>
 
-  <div class="cardstack-toolbars-main">
+  <div class="cst-page-main">
     {{yield}}
   </div>
 
-  {{#liquid-bind rightSidebar animator=a as |currentRightSidebar|}}
-    <div class="cardstack-toolbars-right">
-      {{component currentRightSidebar}}
-    </div>
-  {{/liquid-bind}}
-
-{{/liquid-animator}}
+  <div class="cst-page-gap">
+  {{#from-elsewhere name="cst-right" as |right|}}
+    {{#liquid-bind right rules=rightRules growDuration=animationDuration growPixelsPerSecond=1 as |currentRight|}}
+      {{component currentRight}}
+    {{/liquid-bind}}
+  {{/from-elsewhere}}
+  </div>
+</div>

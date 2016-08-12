@@ -1,0 +1,25 @@
+.cst-page-wrapper {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.cst-page-wrapper > div {
+    height: 100%;
+}
+
+.cst-page-main {
+    flex: 1;
+}
+
+.cst-page-gap {
+    height: 100%;
+}
+
+.cst-page-gap > .liquid-container {
+    height: 100%;
+}
+
+.cst-page-gap > .liquid-container > .liquid-child {
+    height: 100%;
+}
