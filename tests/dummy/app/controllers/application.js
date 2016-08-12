@@ -1,7 +1,6 @@
 import Ember from 'ember';
 
-const duration = 2000;
-const Promise = Ember.RSVP.Promise;
+const duration = 300;
 
 export default Ember.Controller.extend({
   leftRules,
@@ -16,16 +15,22 @@ function leftRules() {
     this.use('to-right', { duration }),
     this.reverse('to-left', { duration })
   );
+  this.transition(
+    this.fromValue(true),
+    this.toValue(true),
+    this.use('swap-out', 'x', 1, { duration: duration / 2 })
+  );
 }
 
 function rightRules() {
   this.transition(
     this.fromValue(true),
     this.toValue(false),
-    this.use(function() {
-      return new Promise(resolve => {
-        setTimeout(resolve, duration);
-      });
-    })
+    this.use('wait', duration)
+  );
+  this.transition(
+    this.fromValue(true),
+    this.toValue(true),
+    this.use('swap-out', 'x', -1, { duration: duration / 2 })
   );
 }

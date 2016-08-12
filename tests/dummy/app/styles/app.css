@@ -40,3 +40,9 @@ body {
     height: 100%;
     width: 20vw;
 }
+
+.red-sidebar {
+    background-color: red;
+    height: 70%;
+    width: 15vw;
+}
