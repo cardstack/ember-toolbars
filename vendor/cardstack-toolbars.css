@@ -1,32 +1,35 @@
-.cst-page-wrapper {
-    display: flex;
-    width: 100vw;
+.cst-left {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.cst-right {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.cst-bottom {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.cst-top {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.cst-vertical > .liquid-container {
     height: 100vh;
 }
 
-.cst-page-wrapper > div {
-    height: 100%;
-}
-
-.cst-page-main {
-    flex: 1;
-}
-
-.cst-page-gap {
-    height: 100%;
-}
-
-.cst-page-gap > .liquid-container {
-    height: 100%;
-}
-
-.cst-page-gap > .liquid-container > .liquid-child {
-    height: 100%;
-}
-
-.cst-page-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+.cst-vertical > .liquid-container > .liquid-child {
+    height: 100vh;
 }

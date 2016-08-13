@@ -1,4 +1,24 @@
-<div class="cst-page-header">
+<div class="cst-left cst-vertical">
+  {{#from-elsewhere name="cst-left" as |left|}}
+    {{#liquid-bind left rules=leftRules growDuration=animationDuration growPixelsPerSecond=1 as |currentLeft|}}
+      {{component currentLeft}}
+    {{/liquid-bind}}
+  {{/from-elsewhere}}
+</div>
+
+<div class="cst-main">
+  {{yield}}
+</div>
+
+<div class="cst-right cst-vertical">
+  {{#from-elsewhere name="cst-right" as |right|}}
+    {{#liquid-bind right rules=rightRules growDuration=animationDuration growPixelsPerSecond=1 as |currentRight|}}
+      {{component currentRight}}
+    {{/liquid-bind}}
+  {{/from-elsewhere}}
+</div>
+
+<div class="cst-top">
   {{#from-elsewhere name="cst-top" as |top|}}
     {{#liquid-bind top rules=topRules growDuration=animationDuration growPixelsPerSecond=1 as |currentTop|}}
       {{component currentTop}}
@@ -6,30 +26,7 @@
   {{/from-elsewhere}}
 </div>
 
-<div class="cst-page-wrapper">
-
-  <div class="cst-page-gap">
-  {{#from-elsewhere name="cst-left" as |left|}}
-    {{#liquid-bind left rules=leftRules growDuration=animationDuration growPixelsPerSecond=1 as |currentLeft|}}
-      {{component currentLeft}}
-    {{/liquid-bind}}
-  {{/from-elsewhere}}
-  </div>
-
-  <div class="cst-page-main">
-    {{yield}}
-  </div>
-
-  <div class="cst-page-gap">
-  {{#from-elsewhere name="cst-right" as |right|}}
-    {{#liquid-bind right rules=rightRules growDuration=animationDuration growPixelsPerSecond=1 as |currentRight|}}
-      {{component currentRight}}
-    {{/liquid-bind}}
-  {{/from-elsewhere}}
-  </div>
-</div>
-
-<div class="cst-page-footer">
+<div class="cst-bottom">
   {{#from-elsewhere name="cst-bottom" as |top|}}
     {{#liquid-bind top rules=bottomRules growDuration=animationDuration growPixelsPerSecond=1 as |currentBottom|}}
       {{component currentBottom}}

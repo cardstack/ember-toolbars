@@ -1,11 +1,40 @@
 import Ember from 'ember';
 import layout from '../templates/components/cardstack-toolbars';
 import swapOut from '../transitions/swap-out';
+import { requestAnimationFrame } from 'cardstack-toolbars';
 
 export default Ember.Component.extend({
   layout,
   classNames: ['cardstack-toolbars'],
   animationDuration: 500,
+
+  didInsertElement() {
+    requestAnimationFrame(() => this.updateMargins());
+  },
+
+  updateMargins() {
+    if (this.isDestroyed) { return; }
+    let elt = this.$();
+    let marginLeft = elt.children('.cst-left').width();
+    let marginRight = elt.children('.cst-right').width();
+    let marginTop = elt.children('.cst-top').height();
+    // we should use bottom margin too (so the last bit of scrollable
+    // content isn't obscured), but it won't work until we get the
+    // content fully contained inside cst-main.
+    // let marginBottom = elt.children('.cst-bottom').height();
+    elt.children('.cst-main').css({
+      marginLeft,
+      marginRight,
+      marginTop
+    });
+    elt.children('.cst-left').css({
+      marginTop
+    });
+    elt.children('.cst-right').css({
+      marginTop
+    });
+    requestAnimationFrame(() => this.updateMargins());
+  },
 
   leftRules: Ember.computed('animationDuration', function(){
     let duration = this.get('animationDuration');
