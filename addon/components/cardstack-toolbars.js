@@ -22,7 +22,7 @@ export default Ember.Component.extend({
     // content isn't obscured), but it won't work until we get the
     // content fully contained inside cst-main.
     // let marginBottom = elt.children('.cst-bottom').height();
-    elt.children('.cst-main').css({
+    elt.css({
       marginLeft,
       marginRight,
       marginTop
