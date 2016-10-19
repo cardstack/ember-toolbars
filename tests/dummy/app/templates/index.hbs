@@ -1,44 +1,5 @@
-<div>
-  <button {{action (action (mut showLeft) false)}}>Left Clear</button>
-  <button {{action (action (mut showLeft) 'blue-sidebar') }}>Left Blue</button>
-  <button {{action (action (mut showLeft) 'red-sidebar') }}>Left Red</button>
-</div>
-
-<div>
-  <button {{action (action (mut showRight) false)}}>Right Clear</button>
-  <button {{action (action (mut showRight) 'green-sidebar') }}>Right Green</button>
-  <button {{action (action (mut showRight) 'red-sidebar') }}>Right Red</button>
-</div>
-
-<div>
-  <button {{action (action (mut showTop) false)}}>Top Clear</button>
-  <button {{action (action (mut showTop) 'purple-sidebar') }}>Top Purple</button>
-  <button {{action (action (mut showTop) 'orange-sidebar') }}>Top Orange</button>
-</div>
-
-<div>
-  <button {{action (action (mut showBottom) false)}}>Bottom Clear</button>
-  <button {{action (action (mut showBottom) 'purple-sidebar') }}>Bottom Purple</button>
-  <button {{action (action (mut showBottom) 'orange-sidebar') }}>Bottom Orange</button>
-</div>
-
-
-{{lorem-ipsum}}
-
-This is the last bit of text.
-
-{{#if showLeft}}
-  {{to-elsewhere named="cst-left" send=(component showLeft) }}
-{{/if}}
-
-{{#if showRight}}
-  {{to-elsewhere named="cst-right" send=(component showRight) }}
-{{/if}}
-
-{{#if showTop}}
-  {{to-elsewhere named="cst-top" send=(component showTop) }}
-{{/if}}
-
-{{#if showBottom}}
-  {{to-elsewhere named="cst-bottom" send=(component showBottom) }}
-{{/if}}
+{{#cardstack-toolbars}}
+  {{#squishable-container}}
+    {{sample-content}}
+  {{/squishable-container}}
+{{/cardstack-toolbars}}

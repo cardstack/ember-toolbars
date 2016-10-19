@@ -11,6 +11,7 @@ body {
 
 .green-sidebar {
     background-color: green;
+    overflow-y: scroll;
     height: 100%;
     width: 20vw;
 }
