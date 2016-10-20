@@ -8,6 +8,7 @@ sudo: false
 cache:
   directories:
     - node_modules
+    - $HOME/.yarn-cache
 
 env:
   - EMBER_TRY_SCENARIO=default
@@ -24,12 +25,13 @@ matrix:
 before_install:
   - npm config set spin false
   - npm install -g bower
+  - npm install -g yarn
   - bower --version
   - npm install phantomjs-prebuilt
   - phantomjs --version
 
 install:
-  - npm install
+  - yarn install
   - bower install
 
 script:
