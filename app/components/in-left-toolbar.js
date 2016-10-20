@@ -1,1 +1,1 @@
-export { default } from 'cardstack-toolbars/components/in-left-toolbar';
+export { default } from 'ember-toolbars/components/in-left-toolbar';

@@ -1,11 +1,11 @@
 import Ember from 'ember';
-import layout from '../templates/components/cardstack-toolbars';
+import layout from '../templates/components/toolbar-manager';
 import swapOut from '../transitions/swap-out';
 import moveOver from '../transitions/move-over';
 
 export default Ember.Component.extend({
   layout,
-  classNames: ['cardstack-toolbars'],
+  classNames: ['ember-toolbars'],
   animationDuration: 500,
 
   leftRules: Ember.computed('animationDuration', function(){

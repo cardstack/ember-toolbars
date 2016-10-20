@@ -1,4 +1,4 @@
-# cardstack-toolbars
+# ember-toolbars
 
 This addon manages animated, fixed-position toolbars on any edge of the viewport. What you put inside the toolbars and how you style them are entirely up to you.
 
@@ -6,16 +6,16 @@ This addon manages animated, fixed-position toolbars on any edge of the viewport
 
 ## Installation
 
-* `ember install cardstack-toolbars`
+* `ember install ember-toolbars`
 
 n## Usage
 
-Wrap your content inside the cardstack-toolbars component. Most often you will want to do this within `application.hbs`, like:
+Wrap your content inside the ember-toolbars component. Most often you will want to do this within `application.hbs`, like:
 
 ```hbs
-{{#cardstack-toolbars}}
+{{#ember-toolbars}}
   {{outlet}}
-{{/cardstack-toolbars}}
+{{/ember-toolbars}}
 ```
 
 Then whenever you want to display a toolbar, use any of these components:
@@ -39,7 +39,7 @@ Since you're using Ember's built-in `component` helper, you can also pass arbitr
 
 ## Making Horizontal Space for Toolbars
 
-The `cardstack-toolbars` component adapts its margins to make room for whatever toolbars are on screen. This means that the content inside of it will have less room when the sidebars are present. For vertical space, this is relatively easy. The top toolbar pushes your content downward, and the bottom toolbar adds a margin to your content so that users can always scroll to the bottommost content without it being obscured.
+The `ember-toolbars` component adapts its margins to make room for whatever toolbars are on screen. This means that the content inside of it will have less room when the sidebars are present. For vertical space, this is relatively easy. The top toolbar pushes your content downward, and the bottom toolbar adds a margin to your content so that users can always scroll to the bottommost content without it being obscured.
 
 Horizontal space is subject to more tradeoffs, so you have several choices for how you want to adapt.
 
@@ -47,27 +47,27 @@ If you do nothing special, your content will simply get resized smaller. Text wi
 
 If you give you content a fixed width (like `100vw` or `800px` or `40em`), it will slide to the right to make room for the left sidebar. For example:
 
-{{#cardstack-toolbars}}
+{{#ember-toolbars}}
   <div style="width: 100vw">
     {{sample-content}}
   </div>
-{{/cardstack-toolbars}}
+{{/ember-toolbars}}
 
-If you give you content a fixed width and `float: right`, it will slide to the left to make room for the right sidebar. You should clear the float so that `cardstack-toolbars` bottom margin will still work correctly, like:
+If you give you content a fixed width and `float: right`, it will slide to the left to make room for the right sidebar. You should clear the float so that `ember-toolbars` bottom margin will still work correctly, like:
 
 ```hbs
-{{#cardstack-toolbars}}
+{{#ember-toolbars}}
   <div style="width: 100vw; float: right">
     {{sample-content}}
   </div>
   <div style="clear: both"></div>
-{{/cardstack-toolbars}}
+{{/ember-toolbars}}
 ```
 
 If you want your content to scale down to match the available space, you can use the [squishable-container]() addon:
 
-{{#cardstack-toolbars}}
+{{#ember-toolbars}}
   {{#squishable-container}}
     {{sample-content}}
   {{/squishable-container}}
-{{/cardstack-toolbars}}
+{{/ember-toolbars}}

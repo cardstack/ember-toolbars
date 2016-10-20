@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import { requestAnimationFrame } from 'cardstack-toolbars';
+import { requestAnimationFrame } from 'ember-toolbars';
 
 const allowedUnits = ['em', 'vw', 'px', 'rem', 'ex'];
 

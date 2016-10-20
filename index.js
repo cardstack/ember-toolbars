@@ -2,8 +2,8 @@
 'use strict';
 
 module.exports = {
-  name: 'cardstack-toolbars',
+  name: 'ember-toolbars',
   included: function(app){
-    app.import('vendor/cardstack-toolbars.css');
+    app.import('vendor/ember-toolbars.css');
   }
 };

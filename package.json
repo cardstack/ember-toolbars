@@ -1,5 +1,5 @@
 {
-  "name": "cardstack-toolbars",
+  "name": "ember-toolbars",
   "version": "0.0.1",
   "description": "Ember toolbar manager",
   "directories": {
@@ -11,7 +11,7 @@
     "start": "ember server",
     "test": "ember try:each"
   },
-  "repository": "",
+  "repository": "https://github.com/cardstack/ember-toolbars",
   "engines": {
     "node": ">= 0.10.0"
   },
