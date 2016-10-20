@@ -13,17 +13,17 @@
 This is the last bit of text.
 
 {{#if showLeft}}
-  {{to-elsewhere named="cst-left" send=(component showLeft) }}
+  {{in-left-toolbar show=(component showLeft)}}
 {{/if}}
 
 {{#if showRight}}
-  {{to-elsewhere named="cst-right" send=(component showRight) }}
+  {{in-right-toolbar show=(component showRight) }}
 {{/if}}
 
 {{#if showTop}}
-  {{to-elsewhere named="cst-top" send=(component showTop) }}
+  {{in-top-toolbar show=(component showTop) }}
 {{/if}}
 
 {{#if showBottom}}
-  {{to-elsewhere named="cst-bottom" send=(component showBottom) }}
+  {{in-bottom-toolbar show=(component showBottom) }}
 {{/if}}

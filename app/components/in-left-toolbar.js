@@ -1,0 +1,1 @@
+export { default } from 'cardstack-toolbars/components/in-left-toolbar';
