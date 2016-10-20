@@ -46,15 +46,25 @@ body {
     left: 0;
 }
 
-.left-sliding-content {
+.right-sliding-content {
     width: 100vw;
 }
 
-.right-sliding-content {
+.left-sliding-content {
     width: 100vw;
     float: right;
 }
 
 .sample-buttons {
     text-align: center;
+}
+
+.demo-nav {
+    text-align: center;
+}
+
+.demo-nav .ember-power-select-trigger {
+    display: inline-block;
+    vertical-align: middle;
+    width: 14em;
 }

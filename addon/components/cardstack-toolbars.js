@@ -8,7 +8,7 @@ export default Ember.Component.extend({
   classNames: ['cardstack-toolbars'],
   animationDuration: 500,
 
-  leftRules: Ember.computed('animationDuration', 'element', function(){
+  leftRules: Ember.computed('animationDuration', function(){
     let opts = {
       adjust: [{ element: this.$(), property: 'margin-left' }],
       duration: this.get('animationDuration')
@@ -29,7 +29,7 @@ export default Ember.Component.extend({
     };
   }),
 
-  rightRules: Ember.computed('animationDuration', 'element', function(){
+  rightRules: Ember.computed('animationDuration', function(){
     let opts = {
       adjust: [{ element: this.$(), property: 'margin-right' }],
       duration: this.get('animationDuration')
@@ -50,7 +50,7 @@ export default Ember.Component.extend({
     };
   }),
 
-  topRules: Ember.computed('animationDuration', 'element', function(){
+  topRules: Ember.computed('animationDuration', function(){
     let $elt = this.$();
     let opts = {
       adjust: [
@@ -74,7 +74,7 @@ export default Ember.Component.extend({
     };
   }),
 
-  bottomRules: Ember.computed('animationDuration', 'element', function(){
+  bottomRules: Ember.computed('animationDuration', function(){
     let opts = {
       adjust: [{ element: this.$(), property: 'margin-bottom' }],
       duration: this.get('animationDuration')
