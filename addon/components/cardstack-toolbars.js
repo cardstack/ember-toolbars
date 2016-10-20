@@ -1,103 +1,95 @@
 import Ember from 'ember';
 import layout from '../templates/components/cardstack-toolbars';
 import swapOut from '../transitions/swap-out';
-import { requestAnimationFrame } from 'cardstack-toolbars';
+import moveOver from '../transitions/move-over';
 
 export default Ember.Component.extend({
   layout,
   classNames: ['cardstack-toolbars'],
   animationDuration: 500,
 
-  didInsertElement() {
-    requestAnimationFrame(() => this.updateMargins());
-  },
+  leftRules: Ember.computed('animationDuration', 'element', function(){
+    let opts = {
+      adjust: [{ element: this.$(), property: 'margin-left' }],
+      duration: this.get('animationDuration')
+    };
 
-  updateMargins() {
-    if (this.isDestroyed) { return; }
-    let elt = this.$();
-    let marginLeft = elt.children('.cst-left').width();
-    let marginRight = elt.children('.cst-right').width();
-    let marginTop = elt.children('.cst-top').height();
-    // we should use bottom margin too (so the last bit of scrollable
-    // content isn't obscured), but it won't work until we get the
-    // content fully contained inside cst-main.
-    // let marginBottom = elt.children('.cst-bottom').height();
-    elt.css({
-      marginLeft,
-      marginRight,
-      marginTop
-    });
-    elt.children('.cst-left').css({
-      marginTop
-    });
-    elt.children('.cst-right').css({
-      marginTop
-    });
-    requestAnimationFrame(() => this.updateMargins());
-  },
-
-  leftRules: Ember.computed('animationDuration', function(){
-    let duration = this.get('animationDuration');
     return function leftRules() {
       this.transition(
         this.fromValue(false),
         this.toValue(true),
-        this.use('to-right', { duration }),
-        this.reverse('to-left', { duration })
+        this.use(moveOver, 'x', 1, opts),
+        this.reverse(moveOver, 'x', -1, opts)
       );
       this.transition(
         this.fromValue(true),
         this.toValue(true),
-        this.use(swapOut, 'x', 1, { duration: duration / 2 })
+        this.use(swapOut, 'x', 1, opts)
       );
     };
   }),
 
-  rightRules: Ember.computed('animationDuration', function(){
-    let duration = this.get('animationDuration');
+  rightRules: Ember.computed('animationDuration', 'element', function(){
+    let opts = {
+      adjust: [{ element: this.$(), property: 'margin-right' }],
+      duration: this.get('animationDuration')
+    };
+
     return function rightRules() {
       this.transition(
         this.fromValue(true),
         this.toValue(false),
-        this.use('wait', duration)
+        this.use(moveOver, 'x', 1, opts),
+        this.reverse(moveOver, 'x', -1, opts)
       );
       this.transition(
         this.fromValue(true),
         this.toValue(true),
-        this.use(swapOut, 'x', -1, { duration: duration / 2 })
+        this.use(swapOut, 'x', -1, opts)
       );
     };
   }),
 
-  topRules: Ember.computed('animationDuration', function(){
-    let duration = this.get('animationDuration');
+  topRules: Ember.computed('animationDuration', 'element', function(){
+    let $elt = this.$();
+    let opts = {
+      adjust: [
+        { element: $elt, property: 'margin-top' },
+        { element: $elt.children('.cst-left'), property: 'translateY' },
+        { element: $elt.children('.cst-right'), property: 'translateY' }],
+      duration: this.get('animationDuration')
+    };
     return function topRules() {
       this.transition(
         this.fromValue(false),
         this.toValue(true),
-        this.use('to-down', { duration }),
-        this.reverse('to-up', { duration })
+        this.use(moveOver, 'y', 1, opts),
+        this.reverse(moveOver, 'y', -1, opts)
       );
       this.transition(
         this.fromValue(true),
         this.toValue(true),
-        this.use(swapOut, 'y', 1, { duration: duration / 2 })
+        this.use(swapOut, 'y', 1, opts)
       );
     };
   }),
 
-  bottomRules: Ember.computed('animationDuration', function(){
-    let duration = this.get('animationDuration');
+  bottomRules: Ember.computed('animationDuration', 'element', function(){
+    let opts = {
+      adjust: [{ element: this.$(), property: 'margin-bottom' }],
+      duration: this.get('animationDuration')
+    };
     return function rightRules() {
       this.transition(
         this.fromValue(true),
         this.toValue(false),
-        this.use('wait', duration)
+        this.use(moveOver, 'y', 1, opts),
+        this.reverse(moveOver, 'y', -1, opts)
       );
       this.transition(
         this.fromValue(true),
         this.toValue(true),
-        this.use(swapOut, 'y', -1, { duration: duration / 2 })
+        this.use(swapOut, 'y', -1, opts)
       );
     };
   }),

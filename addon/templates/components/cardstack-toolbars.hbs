@@ -1,18 +1,16 @@
-<div class="cst-left cst-vertical">
+<div class="cst-left">
   {{#from-elsewhere name="cst-left" as |left|}}
-    {{#liquid-bind left rules=leftRules growDuration=animationDuration growPixelsPerSecond=1 as |currentLeft|}}
+    {{#liquid-bind left rules=leftRules containerless=true as |currentLeft|}}
       {{component currentLeft}}
     {{/liquid-bind}}
   {{/from-elsewhere}}
 </div>
 
-
 {{yield}}
 
-
-<div class="cst-right cst-vertical">
+<div class="cst-right">
   {{#from-elsewhere name="cst-right" as |right|}}
-    {{#liquid-bind right rules=rightRules growDuration=animationDuration growPixelsPerSecond=1 as |currentRight|}}
+    {{#liquid-bind right rules=rightRules containerless=true as |currentRight|}}
       {{component currentRight}}
     {{/liquid-bind}}
   {{/from-elsewhere}}
@@ -20,7 +18,7 @@
 
 <div class="cst-top">
   {{#from-elsewhere name="cst-top" as |top|}}
-    {{#liquid-bind top rules=topRules growDuration=animationDuration growPixelsPerSecond=1 as |currentTop|}}
+    {{#liquid-bind top rules=topRules containerless=true as |currentTop|}}
       {{component currentTop}}
     {{/liquid-bind}}
   {{/from-elsewhere}}
@@ -28,7 +26,7 @@
 
 <div class="cst-bottom">
   {{#from-elsewhere name="cst-bottom" as |top|}}
-    {{#liquid-bind top rules=bottomRules growDuration=animationDuration growPixelsPerSecond=1 as |currentBottom|}}
+    {{#liquid-bind top rules=bottomRules containerless=true as |currentBottom|}}
       {{component currentBottom}}
     {{/liquid-bind}}
   {{/from-elsewhere}}
