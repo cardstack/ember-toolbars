@@ -34,18 +34,6 @@ body {
     padding: 0.5em;
 }
 
-.squishable-container {
-    position: relative;
-    transform-origin: 0 0;
-    will-change: transform;
-}
-
-.squishable-container > div {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
 .right-sliding-content {
     width: 100vw;
 }
