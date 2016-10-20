@@ -10,7 +10,7 @@
 }
 
 .cst-left > .liquid-child {
-    height: 100vh;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -24,7 +24,7 @@
 }
 
 .cst-right > .liquid-child {
-    height: 100vh;
+    height: 100%;
     position: absolute;
     top: 0;
     right: 0;

@@ -75,8 +75,13 @@ export default Ember.Component.extend({
   }),
 
   bottomRules: Ember.computed('animationDuration', function(){
+    let $elt = this.$();
     let opts = {
-      adjust: [{ element: this.$(), property: 'margin-bottom' }],
+      adjust: [
+        { element: $elt, property: 'margin-bottom' },
+        { element: $elt.children('.cst-left'), property: 'bottom' },
+        { element: $elt.children('.cst-right'), property: 'bottom' }
+      ],
       duration: this.get('animationDuration')
     };
     return function rightRules() {
