@@ -1,3 +1,7 @@
+.cardstack-toolbars {
+    position: relative;
+}
+
 .cst-left {
     position: fixed;
     left: 0;

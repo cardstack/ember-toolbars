@@ -8,6 +8,8 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('non-squishable');
+  this.route('left-sliding');
+  this.route('right-sliding');
 });
 
 export default Router;

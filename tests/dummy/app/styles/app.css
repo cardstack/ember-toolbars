@@ -45,3 +45,16 @@ body {
     top: 0;
     left: 0;
 }
+
+.left-sliding-content {
+    width: 100vw;
+}
+
+.right-sliding-content {
+    width: 100vw;
+    float: right;
+}
+
+.sample-buttons {
+    text-align: center;
+}
