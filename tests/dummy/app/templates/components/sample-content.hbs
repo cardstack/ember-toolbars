@@ -1,29 +1,14 @@
-<div>
-  <button {{action (action (mut showLeft) false)}}>Left Clear</button>
-  <button {{action (action (mut showLeft) 'blue-sidebar') }}>Left Blue</button>
-  <button {{action (action (mut showLeft) 'red-sidebar') }}>Left Red</button>
-</div>
-
-<div>
-  <button {{action (action (mut showRight) false)}}>Right Clear</button>
-  <button {{action (action (mut showRight) 'green-sidebar') }}>Right Green</button>
-  <button {{action (action (mut showRight) 'red-sidebar') }}>Right Red</button>
-</div>
-
-<div>
-  <button {{action (action (mut showTop) false)}}>Top Clear</button>
-  <button {{action (action (mut showTop) 'purple-sidebar') }}>Top Purple</button>
-  <button {{action (action (mut showTop) 'orange-sidebar') }}>Top Orange</button>
-</div>
-
-<div>
-  <button {{action (action (mut showBottom) false)}}>Bottom Clear</button>
-  <button {{action (action (mut showBottom) 'purple-sidebar') }}>Bottom Purple</button>
-  <button {{action (action (mut showBottom) 'orange-sidebar') }}>Bottom Orange</button>
-</div>
-
+{{sample-buttons showLeft=(action (mut showLeft))
+                 showRight=(action (mut showRight))
+                 showTop=(action (mut showTop))
+                 showBottom=(action (mut showBottom)) }}
 
 {{lorem-ipsum}}
+
+{{sample-buttons showLeft=(action (mut showLeft))
+                 showRight=(action (mut showRight))
+                 showTop=(action (mut showTop))
+                 showBottom=(action (mut showBottom)) }}
 
 This is the last bit of text.
 
