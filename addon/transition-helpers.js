@@ -23,7 +23,10 @@ export function propertiesFor(dimension) {
   }
 }
 
-export function marginAdjustment(context, measure, opts) {
+export function marginAdjustment(context, measure, _opts) {
+  let opts = Object.assign({
+    queue: false
+  }, _opts);
   let targets = opts.adjust;
   if (!targets) {
     return () => Promise.resolve();
