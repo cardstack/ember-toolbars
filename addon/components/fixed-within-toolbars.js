@@ -24,11 +24,11 @@ export default Ember.Component.extend({
     return Ember.String.htmlSafe(style);
   }),
   innerStyle: Ember.computed('right', function() {
-    let s = "position: fixed;";
+    let style = "position: fixed;";
     let hasRight = this.get('right') != null;
     if (hasRight) {
-      s += "transform: translateX(-100%)";
+      style += "transform: translateX(-100%)";
     }
-    return s;
+    return Ember.String.htmlSafe(style);
   })
 });
