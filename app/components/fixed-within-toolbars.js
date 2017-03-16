@@ -1,0 +1,1 @@
+export { default } from 'ember-toolbars/components/fixed-within-toolbars';

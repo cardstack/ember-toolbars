@@ -1,4 +1,13 @@
 {{#toolbar-manager}}
+
+  {{#fixed-within-toolbars top=0 right=0}}
+    <div style="width: 2em; height: 2em; background-color: green"></div>
+  {{/fixed-within-toolbars}}
+
+  {{#fixed-within-toolbars top="4px" left="4px"}}
+    <div style="width: 2em; height: 2em; background-color: blue"></div>
+  {{/fixed-within-toolbars}}
+
   {{#squishable-container}}
     {{sample-content}}
   {{/squishable-container}}
