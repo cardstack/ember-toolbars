@@ -1,31 +1,25 @@
 {{demo-nav}}
 
-{{sample-buttons showLeft=(action (mut showLeft))
-                 showRight=(action (mut showRight))
-                 showTop=(action (mut showTop))
-                 showBottom=(action (mut showBottom)) }}
+{{sample-buttons model=model }}
 
 {{lorem-ipsum}}
 
-{{sample-buttons showLeft=(action (mut showLeft))
-                 showRight=(action (mut showRight))
-                 showTop=(action (mut showTop))
-                 showBottom=(action (mut showBottom)) }}
+{{sample-buttons model=model }}
 
 This is the last bit of text.
 
-{{#if showLeft}}
-  {{in-left-toolbar show=(component showLeft)}}
+{{#if model.left}}
+  {{in-left-toolbar show=(component model.left)}}
 {{/if}}
 
-{{#if showRight}}
-  {{in-right-toolbar show=(component showRight) }}
+{{#if model.right}}
+  {{in-right-toolbar show=(component model.right) }}
 {{/if}}
 
-{{#if showTop}}
-  {{in-top-toolbar show=(component showTop) }}
+{{#if model.top}}
+  {{in-top-toolbar show=(component model.top) }}
 {{/if}}
 
-{{#if showBottom}}
-  {{in-bottom-toolbar show=(component showBottom) }}
+{{#if model.bottom}}
+  {{in-bottom-toolbar show=(component model.bottom) }}
 {{/if}}
