@@ -2,6 +2,7 @@ import Ember from 'ember';
 import layout from '../templates/components/toolbar-manager';
 import swapOut from '../transitions/swap-out';
 import moveOver from '../transitions/move-over';
+import adaptMargin from '../transitions/adapt-margin';
 
 export default Ember.Component.extend({
   layout,
@@ -15,6 +16,10 @@ export default Ember.Component.extend({
     };
 
     return function leftRules() {
+      this.transition(
+        this.onInitialRender(),
+        this.use(adaptMargin, 'x', opts)
+      );
       this.transition(
         this.fromValue(false),
         this.toValue(true),
@@ -36,6 +41,10 @@ export default Ember.Component.extend({
     };
 
     return function rightRules() {
+      this.transition(
+        this.onInitialRender(),
+        this.use(adaptMargin, 'x', opts)
+      );
       this.transition(
         this.fromValue(true),
         this.toValue(false),
@@ -61,6 +70,10 @@ export default Ember.Component.extend({
     };
     return function topRules() {
       this.transition(
+        this.onInitialRender(),
+        this.use(adaptMargin, 'y', opts)
+      );
+      this.transition(
         this.fromValue(false),
         this.toValue(true),
         this.use(moveOver, 'y', 1, opts),
@@ -84,7 +97,11 @@ export default Ember.Component.extend({
       ],
       duration: this.get('animationDuration')
     };
-    return function rightRules() {
+    return function bottomRules() {
+      this.transition(
+        this.onInitialRender(),
+        this.use(adaptMargin, 'y', opts)
+      );
       this.transition(
         this.fromValue(true),
         this.toValue(false),
