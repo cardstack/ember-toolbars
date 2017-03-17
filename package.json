@@ -1,6 +1,6 @@
 {
   "name": "ember-toolbars",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Ember toolbar manager",
   "directories": {
     "doc": "doc",
