@@ -54,11 +54,11 @@
   ],
   "dependencies": {
     "ember-cli-babel": "^5.1.6",
-    "ember-cli-htmlbars": "^1.1.1"
-  },
-  "peerDependencies": {
+    "ember-cli-htmlbars": "^1.1.1",
     "ember-elsewhere": ">=0.4.0",
     "liquid-fire": ">=0.24.1"
+  },
+  "peerDependencies": {
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
