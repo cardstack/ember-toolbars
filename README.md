@@ -8,7 +8,7 @@ This addon manages animated, fixed-position toolbars on any edge of the viewport
 
 * `ember install ember-toolbars`
 
-n## Usage
+## Usage
 
 Wrap your content inside the `toolbar-manager` component. Most often you will want to do this within `application.hbs`, like:
 
