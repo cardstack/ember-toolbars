@@ -30,6 +30,7 @@ module.exports = {
   },
 
   included: function(){
+    this._super.included.apply(this, arguments);
     this.import('vendor/ember-toolbars.css');
   }
 };
