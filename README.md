@@ -66,7 +66,7 @@ If you give you content a fixed width and `float: right`, it will slide to the l
 {{/toolbar-manager}}
 ```
 
-If you want your content to scale down to match the available space, you can use the [squishable-container]() addon:
+If you want your content to scale down to match the available space, you can use the [squishable-container](https://github.com/cardstack/squishable-container) addon:
 
 ```hbs
 {{#toolbar-manager}}
