@@ -1,3 +1,5 @@
+{{yield}}
+
 <div class="cst-left">
   {{#from-elsewhere name="cst-left" as |left|}}
     {{#liquid-bind left rules=leftRules containerless=true as |currentLeft|}}
@@ -5,8 +7,6 @@
     {{/liquid-bind}}
   {{/from-elsewhere}}
 </div>
-
-{{yield}}
 
 <div class="cst-right">
   {{#from-elsewhere name="cst-right" as |right|}}
