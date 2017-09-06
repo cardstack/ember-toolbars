@@ -9,11 +9,33 @@ export default Ember.Component.extend({
   classNames: ['ember-toolbars'],
   animationDuration: 500,
 
+  // You can set these to change the way corners are displayed. These
+  // are not observed or animated.
+  topLeftCornerBelongsTo: 'top',
+  topRightCornerBelongsTo: 'top',
+  bottomLeftCornerBelongsTo: 'bottom',
+  bottomRightCornerBelongsTo: 'bottom',
+
   leftRules: Ember.computed('animationDuration', function(){
+    let $elt = this.$();
     let opts = {
       adjust: [{ element: this.$(), property: 'margin-left' }],
       duration: this.get('animationDuration')
     };
+
+    if (this.topLeftCornerBelongsTo !== 'top') {
+      opts.adjust.push({
+        element: $elt.children('.cst-top'),
+        property: 'margin-left'
+      });
+    }
+
+    if (this.bottomLeftCornerBelongsTo !== 'bottom') {
+      opts.adjust.push({
+        element: $elt.children('.cst-bottom'),
+        property: 'margin-left'
+      });
+    }
 
     return function leftRules() {
       this.transition(
@@ -35,10 +57,26 @@ export default Ember.Component.extend({
   }),
 
   rightRules: Ember.computed('animationDuration', function(){
+    let $elt = this.$();
     let opts = {
-      adjust: [{ element: this.$(), property: 'margin-right' }],
+      adjust: [{ element: $elt, property: 'margin-right' }],
       duration: this.get('animationDuration')
     };
+
+    if (this.topRightCornerBelongsTo !== 'top') {
+      opts.adjust.push({
+        element: $elt.children('.cst-top'),
+        property: 'margin-right'
+      });
+    }
+
+    if (this.bottomRightCornerBelongsTo !== 'bottom') {
+      opts.adjust.push({
+        element: $elt.children('.cst-bottom'),
+        property: 'margin-right'
+      });
+    }
+
 
     return function rightRules() {
       this.transition(
@@ -63,11 +101,26 @@ export default Ember.Component.extend({
     let $elt = this.$();
     let opts = {
       adjust: [
-        { element: $elt, property: 'margin-top' },
-        { element: $elt.children('.cst-left'), property: 'translateY' },
-        { element: $elt.children('.cst-right'), property: 'translateY' }],
+        { element: $elt, property: 'margin-top' }
+      ],
       duration: this.get('animationDuration')
     };
+
+    if (this.topLeftCornerBelongsTo !== 'left') {
+      opts.adjust.push({
+        element: $elt.children('.cst-left'),
+        property: 'translateY'
+      });
+    }
+
+    if (this.topRightCornerBelongsTo !== 'right') {
+      opts.adjust.push({
+        element: $elt.children('.cst-right'),
+        property: 'translateY'
+      });
+    }
+
+
     return function topRules() {
       this.transition(
         this.onInitialRender(),
@@ -92,11 +145,25 @@ export default Ember.Component.extend({
     let opts = {
       adjust: [
         { element: $elt, property: 'margin-bottom' },
-        { element: $elt.children('.cst-left'), property: 'bottom' },
-        { element: $elt.children('.cst-right'), property: 'bottom' }
       ],
       duration: this.get('animationDuration')
     };
+
+    if (this.bottomLeftCornerBelongsTo !== 'left') {
+      opts.adjust.push({
+        element: $elt.children('.cst-left'),
+        property: 'bottom'
+      });
+    }
+
+    if (this.bottomRightCornerBelongsTo !== 'right') {
+      opts.adjust.push({
+        element: $elt.children('.cst-right'),
+        property: 'bottom'
+      });
+    }
+
+
     return function bottomRules() {
       this.transition(
         this.onInitialRender(),

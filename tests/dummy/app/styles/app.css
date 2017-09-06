@@ -26,12 +26,14 @@ body {
     background-color: purple;
     width: 100%;
     padding: 0.5em;
+    box-sizing: border-box;
 }
 
 .orange-sidebar {
     background-color: orange;
     width: 100%;
     padding: 0.5em;
+    box-sizing: border-box;
 }
 
 .right-sliding-content {

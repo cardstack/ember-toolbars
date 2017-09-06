@@ -38,7 +38,7 @@
 }
 
 .cst-bottom > .liquid-child {
-    width: 100vw;
+    width: 100%;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -52,7 +52,7 @@
 }
 
 .cst-top > .liquid-child {
-    width: 100vw;
+    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
