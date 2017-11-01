@@ -17,27 +17,28 @@ export default Ember.Component.extend({
   bottomRightCornerBelongsTo: 'bottom',
 
   leftRules: Ember.computed('animationDuration', function(){
-    let $elt = this.$();
-    let opts = {
-      adjust: [{ element: this.$(), property: 'margin-left' }],
-      duration: this.get('animationDuration')
-    };
-
-    if (this.topLeftCornerBelongsTo !== 'top') {
-      opts.adjust.push({
-        element: $elt.children('.cst-top'),
-        property: 'margin-left'
-      });
-    }
-
-    if (this.bottomLeftCornerBelongsTo !== 'bottom') {
-      opts.adjust.push({
-        element: $elt.children('.cst-bottom'),
-        property: 'margin-left'
-      });
-    }
-
+    let _this = this;
     return function leftRules() {
+      let $elt = _this.$();
+      let opts = {
+        adjust: [{ element: $elt, property: 'margin-left' }],
+        duration: _this.get('animationDuration')
+      };
+
+      if (_this.topLeftCornerBelongsTo !== 'top') {
+        opts.adjust.push({
+          element: $elt.children('.cst-top'),
+          property: 'margin-left'
+        });
+      }
+
+      if (_this.bottomLeftCornerBelongsTo !== 'bottom') {
+        opts.adjust.push({
+          element: $elt.children('.cst-bottom'),
+          property: 'margin-left'
+        });
+      }
+
       this.transition(
         this.onInitialRender(),
         this.use(adaptMargin, 'x', opts)
@@ -57,28 +58,28 @@ export default Ember.Component.extend({
   }),
 
   rightRules: Ember.computed('animationDuration', function(){
-    let $elt = this.$();
-    let opts = {
-      adjust: [{ element: $elt, property: 'margin-right' }],
-      duration: this.get('animationDuration')
-    };
-
-    if (this.topRightCornerBelongsTo !== 'top') {
-      opts.adjust.push({
-        element: $elt.children('.cst-top'),
-        property: 'margin-right'
-      });
-    }
-
-    if (this.bottomRightCornerBelongsTo !== 'bottom') {
-      opts.adjust.push({
-        element: $elt.children('.cst-bottom'),
-        property: 'margin-right'
-      });
-    }
-
-
+    let _this = this;
     return function rightRules() {
+      let $elt = _this.$();
+      let opts = {
+        adjust: [{ element: $elt, property: 'margin-right' }],
+        duration: _this.get('animationDuration')
+      };
+
+      if (_this.topRightCornerBelongsTo !== 'top') {
+        opts.adjust.push({
+          element: $elt.children('.cst-top'),
+          property: 'margin-right'
+        });
+      }
+
+      if (_this.bottomRightCornerBelongsTo !== 'bottom') {
+        opts.adjust.push({
+          element: $elt.children('.cst-bottom'),
+          property: 'margin-right'
+        });
+      }
+
       this.transition(
         this.onInitialRender(),
         this.use(adaptMargin, 'x', opts)
@@ -98,30 +99,30 @@ export default Ember.Component.extend({
   }),
 
   topRules: Ember.computed('animationDuration', function(){
-    let $elt = this.$();
-    let opts = {
-      adjust: [
-        { element: $elt, property: 'margin-top' }
-      ],
-      duration: this.get('animationDuration')
-    };
-
-    if (this.topLeftCornerBelongsTo !== 'left') {
-      opts.adjust.push({
-        element: $elt.children('.cst-left'),
-        property: 'translateY'
-      });
-    }
-
-    if (this.topRightCornerBelongsTo !== 'right') {
-      opts.adjust.push({
-        element: $elt.children('.cst-right'),
-        property: 'translateY'
-      });
-    }
-
-
+    let _this = this;
     return function topRules() {
+      let $elt = _this.$();
+      let opts = {
+        adjust: [
+          { element: $elt, property: 'margin-top' }
+        ],
+        duration: _this.get('animationDuration')
+      };
+
+      if (_this.topLeftCornerBelongsTo !== 'left') {
+        opts.adjust.push({
+          element: $elt.children('.cst-left'),
+          property: 'translateY'
+        });
+      }
+
+      if (_this.topRightCornerBelongsTo !== 'right') {
+        opts.adjust.push({
+          element: $elt.children('.cst-right'),
+          property: 'translateY'
+        });
+      }
+
       this.transition(
         this.onInitialRender(),
         this.use(adaptMargin, 'y', opts)
@@ -141,30 +142,30 @@ export default Ember.Component.extend({
   }),
 
   bottomRules: Ember.computed('animationDuration', function(){
-    let $elt = this.$();
-    let opts = {
-      adjust: [
-        { element: $elt, property: 'margin-bottom' },
-      ],
-      duration: this.get('animationDuration')
-    };
-
-    if (this.bottomLeftCornerBelongsTo !== 'left') {
-      opts.adjust.push({
-        element: $elt.children('.cst-left'),
-        property: 'bottom'
-      });
-    }
-
-    if (this.bottomRightCornerBelongsTo !== 'right') {
-      opts.adjust.push({
-        element: $elt.children('.cst-right'),
-        property: 'bottom'
-      });
-    }
-
-
+    let _this = this;
     return function bottomRules() {
+      let $elt = _this.$();
+      let opts = {
+        adjust: [
+          { element: $elt, property: 'margin-bottom' },
+        ],
+        duration: _this.get('animationDuration')
+      };
+
+      if (_this.bottomLeftCornerBelongsTo !== 'left') {
+        opts.adjust.push({
+          element: $elt.children('.cst-left'),
+          property: 'bottom'
+        });
+      }
+
+      if (_this.bottomRightCornerBelongsTo !== 'right') {
+        opts.adjust.push({
+          element: $elt.children('.cst-right'),
+          property: 'bottom'
+        });
+      }
+
       this.transition(
         this.onInitialRender(),
         this.use(adaptMargin, 'y', opts)

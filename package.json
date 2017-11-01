@@ -20,8 +20,8 @@
   "dependencies": {
     "ember-cli-babel": "^5.1.7",
     "ember-cli-htmlbars": "^1.1.1",
-    "ember-elsewhere": ">=0.4.0",
-    "liquid-fire": ">=0.24.1"
+    "ember-elsewhere": "^1.0.3",
+    "liquid-fire": "^0.29.0"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
