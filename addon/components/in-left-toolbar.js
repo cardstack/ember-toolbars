@@ -1,4 +1,4 @@
-import Base from './-in-toolbar';
+import Base from './in-toolbar';
 export default Base.extend({
   toolbarName: 'cst-left'
 });
