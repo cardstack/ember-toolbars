@@ -4,7 +4,6 @@ This addon manages animated, fixed-position toolbars on any edge of the viewport
 
 
 
-## Installation
 
 * `ember install ember-toolbars`
 
@@ -24,7 +23,7 @@ Then whenever you want to display a toolbar, use any of these components:
  - `in-top-toolbar`
  - `in-right-toolbar`
  - `in-bottom-toolbar`
- 
+
  Each one accepts a `show` argument that should be a component to show in that toolbar. For example:
 
 ```hbs

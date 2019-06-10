@@ -1,8 +1,7 @@
-/* eslint-env node */
 'use strict';
 
 module.exports = {
-  name: 'ember-toolbars',
+  name: require('./package').name,
 
   init: function() {
     if (this._super.init) {
