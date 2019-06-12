@@ -1,10 +1,12 @@
-import Ember from 'ember';
+import { htmlSafe } from '@ember/template';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 import layout from '../templates/components/fixed-within-toolbars';
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   tagName: '',
-  style: Ember.computed('right', 'top', 'left', function() {
+  style: computed('right', 'top', 'left', function() {
     let style = "position: absolute;";
     ['top', 'left', 'right'].forEach(field => {
       let value = String(this.get(field));
@@ -21,14 +23,14 @@ export default Ember.Component.extend({
       }
 
     });
-    return Ember.String.htmlSafe(style);
+    return htmlSafe(style);
   }),
-  innerStyle: Ember.computed('right', function() {
+  innerStyle: computed('right', function() {
     let style = "position: fixed;";
     let hasRight = this.get('right') != null;
     if (hasRight) {
       style += "transform: translateX(-100%)";
     }
-    return Ember.String.htmlSafe(style);
+    return htmlSafe(style);
   })
 });

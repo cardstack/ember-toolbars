@@ -1,4 +1,10 @@
-import { stop, animate, Promise, isAnimating, finish } from "liquid-fire";
+import {
+  stop,
+  animate,
+  Promise,
+  isAnimating,
+  finish
+} from "liquid-fire";
 
 export function waitForPrevious(context, name) {
   if (isAnimating(context.oldElement, name)) {

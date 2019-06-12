@@ -1,5 +1,6 @@
-<label>Resizing Mode:
-{{#power-select options=routes selected=currentRoute onchange=(action "changeRoute") as |option|}}
-  {{option.title}}
-{{/power-select}}
+<label>
+  Resizing Mode:
+  {{#power-select options=routes selected=currentRoute onchange=(action "changeRoute") as |option|}}
+    {{option.title}}
+  {{/power-select}}
 </label>

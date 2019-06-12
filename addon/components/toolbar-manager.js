@@ -1,10 +1,11 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 import layout from '../templates/components/toolbar-manager';
 import swapOut from '../transitions/swap-out';
 import moveOver from '../transitions/move-over';
 import adaptMargin from '../transitions/adapt-margin';
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   classNames: ['ember-toolbars'],
   animationDuration: 500,
@@ -16,7 +17,7 @@ export default Ember.Component.extend({
   bottomLeftCornerBelongsTo: 'bottom',
   bottomRightCornerBelongsTo: 'bottom',
 
-  leftRules: Ember.computed('animationDuration', function(){
+  leftRules: computed('animationDuration', function(){
     let _this = this;
     return function leftRules() {
       let $elt = _this.$();
@@ -57,7 +58,7 @@ export default Ember.Component.extend({
     };
   }),
 
-  rightRules: Ember.computed('animationDuration', function(){
+  rightRules: computed('animationDuration', function(){
     let _this = this;
     return function rightRules() {
       let $elt = _this.$();
@@ -98,7 +99,7 @@ export default Ember.Component.extend({
     };
   }),
 
-  topRules: Ember.computed('animationDuration', function(){
+  topRules: computed('animationDuration', function(){
     let _this = this;
     return function topRules() {
       let $elt = _this.$();
@@ -141,7 +142,7 @@ export default Ember.Component.extend({
     };
   }),
 
-  bottomRules: Ember.computed('animationDuration', function(){
+  bottomRules: computed('animationDuration', function(){
     let _this = this;
     return function bottomRules() {
       let $elt = _this.$();
