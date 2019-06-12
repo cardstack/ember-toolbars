@@ -1,6 +1,6 @@
 {
   "name": "ember-toolbars",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Ember toolbar manager",
   "keywords": [
     "ember-addon"
