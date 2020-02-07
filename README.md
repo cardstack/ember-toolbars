@@ -2,9 +2,6 @@
 
 This addon manages animated, fixed-position toolbars on any edge of the viewport. What you put inside the toolbars and how you style them are entirely up to you.
 
-
-
-
 * `ember install ember-toolbars`
 
 ## Usage
