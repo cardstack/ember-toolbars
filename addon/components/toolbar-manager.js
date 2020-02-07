@@ -4,6 +4,7 @@ import layout from '../templates/components/toolbar-manager';
 import swapOut from '../transitions/swap-out';
 import moveOver from '../transitions/move-over';
 import adaptMargin from '../transitions/adapt-margin';
+import $ from 'jquery';
 
 export default Component.extend({
   layout,
@@ -20,7 +21,7 @@ export default Component.extend({
   leftRules: computed('animationDuration', function(){
     let _this = this;
     return function leftRules() {
-      let $elt = _this.$();
+      let $elt = $(_this.element);
       let opts = {
         adjust: [{ element: $elt, property: 'margin-left' }],
         duration: _this.get('animationDuration')
@@ -61,7 +62,7 @@ export default Component.extend({
   rightRules: computed('animationDuration', function(){
     let _this = this;
     return function rightRules() {
-      let $elt = _this.$();
+      let $elt = $(_this.element);
       let opts = {
         adjust: [{ element: $elt, property: 'margin-right' }],
         duration: _this.get('animationDuration')
@@ -102,7 +103,7 @@ export default Component.extend({
   topRules: computed('animationDuration', function(){
     let _this = this;
     return function topRules() {
-      let $elt = _this.$();
+      let $elt = $(_this.element);
       let opts = {
         adjust: [
           { element: $elt, property: 'margin-top' }
@@ -145,7 +146,7 @@ export default Component.extend({
   bottomRules: computed('animationDuration', function(){
     let _this = this;
     return function bottomRules() {
-      let $elt = _this.$();
+      let $elt = $(_this.element);
       let opts = {
         adjust: [
           { element: $elt, property: 'margin-bottom' },
