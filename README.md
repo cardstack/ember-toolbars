@@ -2,7 +2,16 @@
 
 This addon manages animated, fixed-position toolbars on any edge of the viewport. What you put inside the toolbars and how you style them are entirely up to you.
 
-* `ember install ember-toolbars`
+```
+ember install ember-toolbars
+```
+
+You also need to have `@ember/jquery` installed in your app.
+If it is not already in your app's `package.json`, run:
+
+```
+ember install @ember/jquery
+```
 
 ## Usage
 

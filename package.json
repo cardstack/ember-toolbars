@@ -27,7 +27,7 @@
     "liquid-fire": "^0.31.0"
   },
   "devDependencies": {
-    "@ember/jquery": "^1.1.0",
+    "@ember/jquery": "^1.0.0",
     "@ember/optional-features": "^1.1.0",
     "@glimmer/component": "^1.0.0",
     "babel-eslint": "^10.0.3",
@@ -62,5 +62,8 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
+  },
+  "peerDependencies": {
+    "@ember/jquery": "^1.0.0"
   }
 }
