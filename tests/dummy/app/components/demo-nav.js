@@ -5,7 +5,7 @@ import Component from '@ember/component';
 
 export default Component.extend({
   classNames: ['demo-nav'],
-  router: service('-routing'),
+  router: service(),
   currentRoute: computed('router.currentRouteName', function() {
     let name = this.get('router.currentRouteName');
     return this.get('routes').find(r => r.route === name);
